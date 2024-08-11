@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <style>
+      body {
+        background-color: white;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      label, input {
+        margin: 10px 0;
+      }
+
+      input[type="submit"] {
+        margin-top: 20px;
+      }
+
+      input[type="submit"]:hover {
+        background-color: lightblue; /* Light blue color on hover */
+      }
+    </style>
+  </head>
+  <body>
+      <form method="post">
+        {% csrf_token %}
+        <label for="{{ form.username.id_for_label }}">Username</label>
+        {{ form.username }}
+        <br />
+        <label for="{{ form.password.id_for_label }}">Password</label>
+        {{ form.password }}
+        <br />
+        <input type="submit" value="Login" />
+      </form>
+    
+  </body>
+</html>

@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ENROLL</title>
+    <style>
+        body {
+            background-color: white;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+        }
+
+        table {
+            margin-bottom: 20px;
+            border-spacing: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: navy;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: lightblue;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form method="post" action="{% url 'create_enrollment' %}">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <th>{{ form.student.label_tag }}</th>
+                    <td>{{ form.student }}</td>
+                </tr>
+                <tr>
+                    <th>{{ form.subject.label_tag }}</th>
+                    <td>{{ form.subject }}</td>
+                </tr>
+                <tr>
+                    <th>{{ form.status.label_tag }}</th>
+                    <td>
+                        <select id="status" name="status" required>
+                            <option value="Enrolled">Enrolled</option>
+                            <option value="Passed">Passed</option>
+                            <option value="Failed">Failed</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" value="Create Enrollment">
+        </form>
+    </div>
+</body>
+</html>

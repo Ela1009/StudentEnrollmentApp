@@ -1,0 +1,17 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Subject Details</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h2>Subject Details for {{ subject.name }}</h2>
+    <p><b>Subject Code:</b> {{ subject.kod }}</p>
+    <p><b>Program:</b> {{ subject.program }}</p>
+    <p><b>ECTS:</b> {{ subject.ects }}</p>
+    <p><b>Elective course:</b> {{ subject.izborni }}</p>
+    
+</body>
+</html>

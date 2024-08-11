@@ -1,0 +1,21 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student List</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h2> Students who failed {{ subject.name }}</h2>
+    {% if failed_students %}
+        <ul>
+            {% for student in failed_students %}
+                <li>{{ student.first_name }} {{ student.last_name }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No failed students for this subject.</p>
+    {% endif %}
+</body>
+</html>

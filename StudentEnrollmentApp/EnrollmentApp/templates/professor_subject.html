@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Professor Subjects</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    
+    <h2>List of {{ user.username }}'s subjects</h2>
+    <ul>
+        {% for subject in list %}
+            <li>
+                <b>{{ subject.name }}</b>
+                <span class="space"></span>
+                <a href="{% url 'subject_student_list' subject.id %}" class="list">View Student List</a>
+                <span class="space"></span>
+                <a href="{% url 'subject_passed_students' subject.id %}" class="list">View Passed Students</a> 
+                <span class="space"></span>
+                <a href="{% url 'subject_enrolled_students' subject.id %}" class="list">View Enrolled Students</a>
+                <span class="space"></span>
+                <a href="{% url 'subject_failed_students' subject.id %}" class="list">View Failed Students</a>
+                <span class="space"></span>
+                <a href="{% url 'subject_details' subject.id %}" class="list">Details</a>
+            </li>
+            <hr>
+            <br>
+        {% empty %}
+            <li>No subjects assigned to the professor.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

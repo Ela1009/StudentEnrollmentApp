@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HOME</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            margin-bottom: 20px;
+        }
+
+        .button-container a,
+        .button-container input[type="submit"] {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            color: white;
+            background-color: navy;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .button-container a:hover,
+        .button-container input[type="submit"]:hover {
+            background-color: lightblue;
+            color: navy;
+        }
+    </style>
+</head>
+<body>
+    <h2>Welcome, {{ user.username }}!</h2>
+
+    <div class="button-container">
+        <a href="{% url 'upisni_list' %}">ENROLLMENT LIST</a>
+    </div>
+
+    <form action="{% url 'enrolled_student' %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="List All Enrolled Subjects" style="width: 200px">
+    </form>
+
+    <form action="{% url 'unenrolled_subjects' %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="List All Unenrolled Subjects" style="width: 200px">
+    </form>
+</body>
+</html>

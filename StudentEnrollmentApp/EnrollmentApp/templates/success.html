@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HOME</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <style>
+      body {
+        background-color: white;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+      }
+      a {
+        display: inline-block;
+        color: white;
+        background-color: navy;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin: 5px 0;
+        font-size: 16px;
+        width: 200px;
+      }
+
+      a:hover {
+        background-color: lightblue; 
+      }
+
+      form {
+        margin-top: 10px;
+      }
+
+      input[type="submit"] {
+        background-color: navy;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        width: 200px;
+      }
+
+      input[type="submit"]:hover {
+        background-color: lightblue; 
+      }
+
+      h1 {
+        margin-bottom: 20px;
+      }
+    </style>
+</head>
+<body>
+
+  <h1>Dobrodošli, {{ user.username }}!</h1>
+  <a href="{% url 'add_subject' %}">DODAJ PREDMET</a>
+  <a href="{% url 'add_user' %}">DODAJ KORISNIKA</a>
+  <a href="{% url 'create_enrollment' %}">UPIS</a>
+  <a href="{% url 'user_list' %}">UKLONI KORISNIKA</a>
+  <a href="{% url 'logout' %}" class="logout">LOGOUT</a>
+
+  <form action="{% url 'lista_predmeta' %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="popis predmeta">
+  </form>
+  <form action="{% url 'student_list' %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="popis studenata">
+  </form>
+  <form action="{% url 'professor_list' %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="popis profesora">
+  </form>
+  <form action="{% url 'subject_list' %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Predmet studenti">
+  </form>
+</body>
+</html>

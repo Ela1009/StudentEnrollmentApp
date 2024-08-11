@@ -1,0 +1,17 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student List</title>
+</head>
+<body>
+    <h2>Edit Student Status for {{ subject.name }}</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save Changes">
+    </form>
+</body>
+</html>
+

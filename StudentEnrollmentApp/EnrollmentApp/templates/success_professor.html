@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HOME</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        nav {
+            width: 100%;
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-links a {
+            display: block;
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: navy;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: color 0.3s, background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+            background-color: lightblue;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+  <h2>Welcome, {{ user.username }}!</h2>
+   
+        <div class="nav-links">
+            
+            <a href="{% url 'professor_subjects' %}">SUBJECTS</a>
+            <a href="{% url 'logout' %}" class="logout">LOGOUT</a>
+        </div>
+    
+    
+</body>
+</html>

@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .predmet-info {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        .list {
+            text-decoration: none;
+            color: navy;
+            font-size: 14px;
+            padding: 5px 10px;
+            border: 1px solid navy;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .list:hover {
+            background-color: lightblue;
+            color: navy;
+        }
+
+        .space {
+            display: inline-block;
+            width: 10px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    {% for predmet in predmeti %}
+    <div class="predmet-info">
+        <h2>{{ predmet.name }}</h2>
+        <p>Kod: {{ predmet.kod }}</p>
+        <span class="space"></span>
+        <a href="{% url 'promjena_predmeta' predmet.id %}" class="list">Edit</a>
+        <span class="space"></span>
+        <a href="{% url 'popis_studenata' predmet.id %}" class="list">View Student List</a>
+    </div>
+    <hr>
+    {% endfor %}
+</body>
+</html>

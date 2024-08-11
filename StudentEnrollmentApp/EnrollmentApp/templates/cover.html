@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Opening Page</title>
+    <style>
+      body {
+        background-color: white;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .login {
+        font-size: 2rem; /* Increase the font size */
+        text-decoration: none;
+        color: black;
+      }
+      
+
+      .login:hover {
+        background-color: white;
+        color: lightblue;
+      }
+
+ 
+    </style>
+  </head>
+  <body>
+     
+    <a href="{% url 'login' %}" class="login">LOGIN AS ADMIN, STUDENT OR PROFESSOR</a> 
+    
+  </body>
+</html>

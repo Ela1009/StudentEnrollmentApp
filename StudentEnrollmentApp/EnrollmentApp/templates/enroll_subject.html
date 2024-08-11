@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enroll</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+    <h1>Enroll Subject</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <p>Are you sure you want to enroll in {{ subject.name }}?</p>
+        <input type="submit" value="Enroll">
+    </form>
+</body>
+</html>

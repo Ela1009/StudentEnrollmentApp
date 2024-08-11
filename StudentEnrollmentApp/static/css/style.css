@@ -1,0 +1,164 @@
+style.css 
+
+/* Add general styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+  margin: 0px;
+  padding: 0px;
+} 
+
+form {
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+select {
+  padding: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 200px;
+}
+
+input[type="submit"] {
+  background-color: #385170;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+input[type="submit"]:hover {
+  background-color: #96e0f3;
+}
+
+nav {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #142d4c;
+  color: rgb(245, 239, 238);
+  z-index: 100;
+}
+
+.nav-left {
+  display: flex;
+}
+
+.nav-right {
+  margin-left: auto;
+}
+
+nav a {
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  font-size: 17px;
+  overflow: hidden;
+  color: rgb(245, 239, 238);
+}
+
+nav a:hover {
+  background-color: red;
+  color: black;
+}
+
+nav a:active {
+  background-color: white;
+}
+
+.current {
+  background-color: green;
+  color: black;
+}
+
+.predmet-info {
+  display: flex;
+  align-items: center;
+}
+
+.predmet-info h2,
+.predmet-info p,
+.predmet-info a {
+  margin-right: 10px;
+}
+
+.logout:hover {
+  background-color: #142d4c;
+  color: black;
+}
+
+.list:hover {
+  background-color: greenyellow;
+  color: #4caf50;
+}
+
+.list {
+  text-decoration: none;
+}
+
+.space {
+  margin-right: 15px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-container {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  width: 300px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container label {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.form-container input[type="text"],
+.form-container input[type="password"] {
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.form-container input[type="submit"] {
+  background-color: #385170;
+  color: rgb(245, 239, 238);
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.form-container input[type="submit"]:hover {
+  background-color: red;
+}
+
+textarea {
+  width:195px;
+  height: 85px;
+}

@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Enrollment List</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <h2>{{ student.first_name }} {{ student.last_name }} - Enrollment List</h2>
+    <form method="POST">
+      {% csrf_token %}
+      {{ formset.management_form }}
+      <table>
+        <thead>
+          <tr>
+            <th>Subject</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for form in formset %}
+          <tr>
+            <td>{{ form.subject }}</td>
+            <td>{{ form.status }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <input type="submit" value="Save Changes" />
+    </form>
+  </body>
+</html>
+
