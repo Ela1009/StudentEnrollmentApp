@@ -16,6 +16,7 @@ pregled liste profesora
 dodavanje i editiranje profesora
 pregled popisa studenata za svaki pojedinacni predmet (na svaki predmet dodati link „vidi popis studenata”)
 za administrator ulogu nije dozvoljeno koristiti Djangov admin sustav
+
 Uloga profesor:
 
 autentikacija
