@@ -1,7 +1,7 @@
 # StudentEnrollmentApp
 
 Zadatak za projekt
-Izraditi sustav za upis studenata. Sustav ce se sastojati od tri uloge: student, profesor i administrator.
+Izraditi sustav za upis studenata. Sustav ce se sastojati od tri uloge: <b>student, profesor i administrator</b>.
 
 Uloga administrator:
 
